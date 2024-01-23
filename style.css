@@ -1,0 +1,183 @@
+:root {
+  --d: 2000ms;
+  --angle: 90deg;
+  --gradX: 100%;
+  --gradY: 50%;
+  --c1: rgb(46, 174, 202);
+  --c2: rgba(168, 239, 255, 0.1);
+}
+
+.logo {
+  width: 50px;
+}
+
+.project--button {
+  width: 80px;
+}
+
+/* READ MORE */
+
+/* ---- first card read more  ----- */
+#showHide {
+  display: none;
+}
+
+#showHide:checked ~ .content {
+  display: block;
+}
+
+#showHide:checked ~ label {
+  display: none;
+}
+
+/* ---- second card read more  ----- */
+#showHide2 {
+  display: none;
+}
+
+#showHide2:checked ~ .content {
+  display: block;
+}
+
+#showHide2:checked ~ label {
+  display: none;
+}
+
+.content {
+  display: none;
+}
+
+.card_label {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.card_label:hover {
+  color: var(--c1);
+}
+
+/* CARD ANIMATION */
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 90deg;
+  inherits: true;
+}
+
+@property --gradX {
+  syntax: "<percentage>";
+  initial-value: 50%;
+  inherits: true;
+}
+
+@property --gradY {
+  syntax: "<percentage>";
+  initial-value: 0%;
+  inherits: true;
+}
+
+p {
+  margin: 0;
+}
+/* .photo-line::after {
+  content: "";
+
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 30rem solid transparent;
+  border-right: 60rem solid rgb(46, 174, 202);
+  border-bottom: 30rem solid transparent;
+  transform: rotate(140deg);
+  top: 50px;
+  left: -100px;
+  z-index: -1;
+} */
+.photo-line {
+  position: relative;
+}
+
+.photo-line::after {
+  content: "";
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  height: 100%;
+  width: 100%;
+  background-color: var(--c1);
+  z-index: -1;
+}
+
+.wrapper {
+  min-width: min(40rem, 100%);
+}
+
+.box {
+  border: 0.35rem solid;
+  padding: 2px;
+  border-image: conic-gradient(
+      from var(--angle),
+      var(--c2),
+      var(--c1) 0.1turn,
+      var(--c1) 0.15turn,
+      var(--c2) 0.25turn
+    )
+    30;
+}
+
+.box:hover {
+  animation: borderRotate var(--d) linear infinite forwards;
+}
+
+@keyframes borderRotate {
+  100% {
+    --angle: 420deg;
+  }
+}
+
+@keyframes borderRadial {
+  20% {
+    --gradX: 100%;
+    --gradY: 50%;
+  }
+  40% {
+    --gradX: 100%;
+    --gradY: 100%;
+  }
+  60% {
+    --gradX: 50%;
+    --gradY: 100%;
+  }
+  80% {
+    --gradX: 0%;
+    --gradY: 50%;
+  }
+  100% {
+    --gradX: 50%;
+    --gradY: 0%;
+  }
+}
+
+.courseLink {
+  text-decoration: none;
+  color: var(--c1);
+}
+
+.c-item {
+  height: 380px;
+}
+
+@media screen and (max-width: 600px) {
+  .c-item {
+    height: 280px;
+  }
+
+  .c-img {
+    object-fit: contain;
+  }
+}
+
+.c-img {
+  height: 100%;
+  object-fit: cover;
+}
