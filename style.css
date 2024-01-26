@@ -17,6 +17,8 @@
 
 /* READ MORE */
 
+
+
 /* ---- first card read more  ----- */
 #showHide {
   display: none;
@@ -40,6 +42,34 @@
 }
 
 #showHide2:checked ~ label {
+  display: none;
+}
+
+/* ---- third card read more  ----- */
+
+#showHide3 {
+  display: none;
+}
+
+#showHide3:checked ~ .content {
+  display: block;
+}
+
+#showHide3:checked ~ label {
+  display: none;
+}
+
+/* ---- forth card read more  ----- */
+
+#showHide4 {
+  display: none;
+}
+
+#showHide4:checked ~ .content {
+  display: block;
+}
+
+#showHide4:checked ~ label {
   display: none;
 }
 
@@ -79,20 +109,7 @@
 p {
   margin: 0;
 }
-/* .photo-line::after {
-  content: "";
 
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-top: 30rem solid transparent;
-  border-right: 60rem solid rgb(46, 174, 202);
-  border-bottom: 30rem solid transparent;
-  transform: rotate(140deg);
-  top: 50px;
-  left: -100px;
-  z-index: -1;
-} */
 .photo-line {
   position: relative;
 }
