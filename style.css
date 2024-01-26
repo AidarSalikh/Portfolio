@@ -12,12 +12,14 @@
 }
 
 .project--button {
-  width: 80px;
+  width: 100px;
 }
 
+/* .about--me {
+  text-wrap: balance;
+} */
+
 /* READ MORE */
-
-
 
 /* ---- first card read more  ----- */
 #showHide {
