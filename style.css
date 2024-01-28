@@ -15,9 +15,7 @@
   width: 110px;
 }
 
-/* .about--me {
-  text-wrap: balance;
-} */
+
 
 /* READ MORE */
 
@@ -176,6 +174,7 @@ p {
     --gradY: 0%;
   }
 }
+
 
 .courseLink {
   text-decoration: none;
